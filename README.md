@@ -1,4 +1,4 @@
-# Android Device tree for Samsung Galaxy m32 4G - SM-m325F (m32)
+# Android Device tree for Samsung Galaxy  m32 test 
 
 ```
 #
