@@ -68,7 +68,7 @@ TARGET_KERNEL_ARCH := arm64
 # Boot
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive console=tty0 init=/init
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -83,7 +83,7 @@ BOARD_MKBOOTIMG_ARGS := \
 	--second_offset $(BOARD_KERNEL_SECOND_OFFSET) \
 	--header_version $(BOARD_BOOT_HEADER_VERSION) \
 	--pagesize $(BOARD_KERNEL_PAGESIZE) \
-	--board "SRPUB24A003" \
+	--board "" \
 	--dtb $(TARGET_PREBUILT_DTB) \
 	--dtb_offset $(BOARD_DTB_OFFSET) \
 	--recovery_dtbo $(BOARD_PREBUILT_DTBOIMAGE)
