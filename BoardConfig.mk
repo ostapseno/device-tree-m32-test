@@ -83,7 +83,7 @@ BOARD_MKBOOTIMG_ARGS := \
 	--second_offset $(BOARD_KERNEL_SECOND_OFFSET) \
 	--header_version $(BOARD_BOOT_HEADER_VERSION) \
 	--pagesize $(BOARD_KERNEL_PAGESIZE) \
-	--board "SRPUB24A003" \
+	--board "" \
 	--dtb $(TARGET_PREBUILT_DTB) \
 	--dtb_offset $(BOARD_DTB_OFFSET) \
 	--recovery_dtbo $(BOARD_PREBUILT_DTBOIMAGE)
