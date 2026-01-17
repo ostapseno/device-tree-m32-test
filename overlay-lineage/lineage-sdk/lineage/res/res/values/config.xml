@@ -65,4 +65,7 @@
         <item>org.lineageos.aperture</item>
         <item>org.lineageos.aperture.dev</item>
     </string-array>
+    <dimen name="rounded_corner_radius">80px</dimen>
+    <bool name="config_showNavigationBar">true</bool>
+     
 </resources>
