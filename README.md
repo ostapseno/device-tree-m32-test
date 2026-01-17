@@ -1,5 +1,5 @@
 # Android Device tree for Samsung Galaxy m32 test only
-# to get it use "git clone https://github.com/ostapseno/device-tree-m32-test"
+# to get it use "git clone https://github.com/ostapseno/device-tree-m32-test/lineage-18"
 ```
 #
 # Copyright (C) 2024 The LineageOS Project
