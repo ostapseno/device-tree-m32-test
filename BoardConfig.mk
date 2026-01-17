@@ -26,7 +26,8 @@ TARGET_SOC := k69v1_64_titan
 TARGET_BOOTLOADER_BOARD_NAME := mt6768
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-TARGET_USES_UEFI := true
+# change it to true if wont work
+TARGET_USES_UEFI := false
 
 # Architecture
 TARGET_ARCH := arm64
