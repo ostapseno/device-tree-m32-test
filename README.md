@@ -1,6 +1,5 @@
 # Android Device tree for Samsung Galaxy m32 test only
-# to get it use "git clone -b lineage-18 https://github.com/ostapseno/device-tree-m32-test"
-# Please use the lineage-18 branch it had more updates
+# to get it use "git clone -b lineage-18-updated https://github.com/ostapseno/device-tree-m32-test"
 
 ```
 #
