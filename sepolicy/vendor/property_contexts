@@ -15,9 +15,6 @@ ro.vendor.camera.wrapper.hal3TrebleMinorVersion         u:object_r:vendor_camera
 # Display
 vendor.display.sf.                      u:object_r:vendor_display_sf_prop:s0
 
-# Fingerprint
-vendor.finger.down                      u:object_r:vendor_udfps_prop:s0
-
 # HWC
 vendor.display.vds_allow_hwc            u:object_r:vendor_hwc_prop:s0
 

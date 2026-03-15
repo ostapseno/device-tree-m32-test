@@ -102,8 +102,10 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr) {
     LOG(INFO) << "Successfully registered uinput-sec-fp for fingerprint gestures";
 #endif
 
-    set(TSP_CMD_PATH, "fod_enable,1,1,0");
-    set(TSP_CMD_PATH, "set_fod_rect,440,2085,640,2285");
+    if (mIsUdfps) {
+        set(TSP_CMD_PATH, "fod_enable,1,1,0");
+        set(TSP_CMD_PATH, "set_fod_rect,440,2085,640,2285");
+    }
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
@@ -117,7 +119,9 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
-    property_set("vendor.finger.down", "1");
+    if (!mIsUdfps) {
+        return Void();
+    }
 
     std::thread([]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(35));
@@ -131,6 +135,10 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, floa
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    if (!mIsUdfps) {
+        return Void();
+    }
+
     request(SEM_REQUEST_TOUCH_EVENT, FINGERPRINT_REQUEST_RESUME);
 
     BrightnessRestore = nullptr;

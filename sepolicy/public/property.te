@@ -10,4 +10,3 @@ type sec_timed_prop, property_type, system_property_type, system_public_property
 type sec_hdr_prop, property_type, system_property_type, system_public_property_type;
 
 vendor_restricted_prop(vendor_exported_system_prop);
-system_public_prop(vendor_udfps_prop)

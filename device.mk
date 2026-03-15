@@ -122,7 +122,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     android.hardware.drm@1.4.vendor \
-    libdrm.vendor\
+    libdrm.vendor \
     libdrmclearkeyplugin \
     libmockdrmcryptoplugin \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
@@ -142,8 +142,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service-samsung.m32 \
-    SamsungUdfpsHandler.m32
+    android.hardware.biometrics.fingerprint@2.3-service-samsung.m32
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -275,7 +274,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
@@ -360,16 +358,12 @@ PRODUCT_PACKAGES += \
     init.mt6769t.rc \
     init.project.rc \
     init_connectivity.rc \
-    init.recovery.mt6768.rc \
-    init.recovery.mt6769t.rc \
-    init.recovery.samsung.rc \
     init.target.rc \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768 \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6769t:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6769t \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6769t:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6769t
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6769t:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6769t
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -453,4 +447,3 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/samsung/m32/m32-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(shell find $(LOCAL_PATH)/configs/permissions -name "*.xml" -type f -printf '%p:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/%P ')
-

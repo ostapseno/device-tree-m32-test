@@ -9,5 +9,3 @@ allow hal_fingerprint_default sysfs_ski_display_writable:lnk_file r_file_perms;
 allow hal_fingerprint_default sysfs_battery:dir r_dir_perms;
 allow hal_fingerprint_default sysfs_battery:file r_file_perms;
 allow hal_fingerprint_default sysfs_battery:lnk_file r_file_perms;
-
-set_prop(hal_fingerprint_default, vendor_udfps_prop);

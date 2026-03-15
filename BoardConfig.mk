@@ -17,8 +17,10 @@
 
 DEVICE_PATH := device/samsung/m32
 
-# For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # Bootloader
 BOARD_VENDOR := samsung
@@ -69,8 +71,8 @@ TARGET_KERNEL_ARCH := arm64
 # Boot
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive console=tty0 init=/init
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 console=tty0 init=/init
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x07c08000
@@ -89,7 +91,8 @@ BOARD_MKBOOTIMG_ARGS := \
 	--dtb_offset $(BOARD_DTB_OFFSET) \
 	--recovery_dtbo $(BOARD_PREBUILT_DTBOIMAGE)
 
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+# Use the default boot image generation path unless a custom bootimg.mk exists.
+# BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -133,4 +136,3 @@ TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
 BOARD_USES_METADATA_PARTITION := true
-
