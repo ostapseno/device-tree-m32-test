@@ -7,5 +7,4 @@
 # Copyright (C) 2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
-# Would it work without Apache-2.0
 ```
